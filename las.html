@@ -1,0 +1,478 @@
+<html>
+
+<head>
+    <title> LAS </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200&display=swap" rel="stylesheet">
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>Space Website </title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<body>
+    <nav class="navbar-inverse" style="position:sticky;top:0;z-index:99999">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="las.html">Learn About Space</a></li>
+                <li><a href="st.html" >Stargazing Tips!</a></li>
+                <li><a href="spaceprobes.html" >Space Probes</a></li>
+                <li><a href="jobsinspace.html" >Jobs in Space!</a></li>
+                             <li><a href="ata.html" >About the Author</a></li>
+             <li><a href="contact.html" >Feedback</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <style>
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 250px;
+            height: 175px;
+
+        }
+
+        button {
+            width: 150;
+            height: 50;
+            background-color: firebrick;
+            color: floralwhite
+        }
+
+        .hero-container {
+            background-color: white;
+            padding: 20px;
+        }
+
+
+        .hero-image {
+            width: 42%;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .hero-image img {
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            top: -22px;
+            width: 47%;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .hero-content a.button {
+            background-color: #050505;
+            padding: 10px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .navigation {
+            background-color: #050505;
+        }
+
+        .navigation ul {
+            margin-bottom: 0;
+        }
+
+        .navigation li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .navigation a {
+            color: #eef0f8;
+            font-weight: bold;
+        }
+
+        .navigation a.active {
+            text-decoration: none;
+        }
+
+        h1::before {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        h1:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        h1::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            inset: 0 0 0 0;
+            background: hsl(200 100% 80%);
+            z-index: -1;
+            transition: transform .3s ease;
+        }
+
+        h1 {
+            position: relative;
+            font-size: 5rem;
+        }
+
+        html {
+            block-size: 100%;
+            inline-size: 100%;
+        }
+
+        button {
+            text-align: center;
+        }
+
+
+
+        @media (orientation: landscape) {
+            body {
+                grid-auto-flow: column;
+            }
+        }
+
+        .rotate {
+            -webkit-transform-origin: 250px 250px;
+            -moz-transform-origin: 250px 250px;
+            -ms-transform-origin: 250px 250px;
+            -o-transform-origin: 250px 250px;
+            transform-origin: 250px 250px;
+            animation: orbit 4s linear infinite;
+        }
+
+        circle {
+            fill: none;
+        }
+
+        .sun {
+            fill: yellow;
+        }
+
+        .neptune {
+            fill: #5f9ea0;
+            -webkit-animation-duration: 7s;
+            -moz-animation-duration: 7s;
+            -o-animation-duration: 7s;
+            animation-duration: 7s;
+        }
+
+        .uranus {
+            fill: #3f56ff;
+            -webkit-animation-duration: 9s;
+            -moz-animation-duration: 9s;
+            -o-animation-duration: 9s;
+            animation-duration: 9s;
+        }
+
+        .saturn {
+            fill: #f3cfa9;
+            -webkit-animation-duration: 4s;
+            -moz-animation-duration: 4s;
+            -o-animation-duration: 4s;
+            animation-duration: 4s;
+        }
+
+        .jupiter {
+            fill: #e89054;
+            -webkit-animation-duration: 8s;
+            -moz-animation-duration: 8s;
+            -o-animation-duration: 8s;
+            animation-duration: 8s;
+        }
+
+        .mars {
+            fill: #aa180a;
+            -webkit-animation-duration: 7s;
+            -moz-animation-duration: 7s;
+            -o-animation-duration: 7s;
+            animation-duration: 7s;
+        }
+
+        .earth {
+            fill: #58aa65;
+            -webkit-animation-duration: 4s;
+            -moz-animation-duration: 4s;
+            -o-animation-duration: 4s;
+            animation-duration: 4s;
+        }
+
+        .venus {
+            fill: #e66d18;
+            -webkit-animation-duration: 6s;
+            -moz-animation-duration: 6s;
+            -o-animation-duration: 6s;
+        }
+
+        .mergury {
+            fill: #fff;
+            -webkit-animation-duration: 6s;
+            -moz-animation-duration: 6s;
+            -o-animation-duration: 6s;
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        #text {
+            color: white;
+        }
+
+        #Solar {
+            background-color: black;
+        }
+
+        row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .travel_mainDiv {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            border: 1px solid #c7c7c7;
+        }
+
+        .travel_mainDiv img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .travel_mainDiv hr {
+            width: 100%;
+        }
+
+        .travel_mainDiv h5,
+        .trave;
+
+        _mainDiv p {
+            margin-left: 20px;
+        }
+
+        #achievementsID {
+            padding-bottom: 10px;
+        }
+
+        .movie_head {
+            font-size: 20px;
+            padding: 6px 22px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .movie_head i {
+            float: right
+        }
+
+        .movie_text span {
+            color: #ff7700;
+        }
+    </style>
+
+    <body>
+
+        <section id="hi" class="parallax-container">
+            <div class="parallax-inner">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" class="moon" />
+                <h1> Welcome to Learn About Space! <br><span id="text"> </span></h1>
+               
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section id="Solar">
+            <br>
+            <br>
+            <h1 id="text"> Solar System (Planets) : </h1>
+            <hr>
+            <p id="text">
+                The Solar System is the gravitationally bound system of the Sun and the objects that orbit it, either directly or indirectly. Of the objects that orbit the Sun directly, the largest are the eight planets, with the remainder being smaller objects, the dwarf planets and small Solar System bodies
+            </p>
+
+
+
+
+
+
+            <span class="sp" onclick="spanelem()">
+
+            </span>
+
+            <span class="sp" onclick="spanelem()">
+                <div id="marsloc"></div>
+                <svg width="600" height="600">
+                    <circle r="240" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="neptune rotate" r="15" cx="420" cy="78"></circle>
+                    <circle r="220" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="uranus rotate" r="10" cx="380" cy="72"></circle>
+                    <circle r="200" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="saturn rotate" r="12" cx="320" cy="64"></circle>
+                    <circle r="180" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="jupiter rotate" r="20" cx="70" cy="244"></circle>
+                    <circle r="160" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="mars rotate" r="8" cx="130" cy="354"></circle>
+                    <circle r="140" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="earth rotate" r="6" cx="280" cy="386"></circle>
+                    <circle r="120" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="venus rotate" r="5" cx="280" cy="134"></circle>
+                    <circle r="90" cx="250" cy="250" stroke="#fff"></circle>
+                    <circle class="mergury rotate" r="4" cx="180" cy="194"></circle>
+                    <circle class="sun" r="80" cx="250" cy="250"></circle>
+                </svg>
+
+            </span>
+
+
+        </section>
+        
+        <center> 
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tour the weird and wonderful worlds of our solar system at <a href="https://t.co/3gY7dr3mLv">https://t.co/3gY7dr3mLv</a> – and those beyond at <a href="https://t.co/crOI6v1TTn">https://t.co/crOI6v1TTn</a>. <a href="https://t.co/G7ZhkUbq5c">https://t.co/G7ZhkUbq5c</a></p>&mdash; NASA Solar System (@NASASolarSystem) <a href="https://twitter.com/NASASolarSystem/status/1381669006550003712?ref_src=twsrc%5Etfw">April 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            
+            
+        </center>
+      
+        <hr>
+
+        <h1> Click on one of these:</h1>
+        <br>
+        <br>
+        <div id="aligningdiv">
+            <a href="mercury.html" target="_blank"> <img class="space" src="mercury.png">
+
+                <a href="venus.html" target="_blank"> <img class="space" src="venus2.png">
+                    <a href="mars.html" target="_blank"> <img class="space" src="https://s.w-x.co/in-marsplanet.jpg?crop=16:9&width=480&format=pjpg&auto=webp&quality=60">
+
+
+                        <br>
+                        <br>
+                        <br>
+                        <a href="GasGiants.html" target="_blank"> <img class="space" src="https://gray-wrdw-prod.cdn.arcpublishing.com/resizer/8TQdqL_gASeCIwN0gBB5bfEAn9A=/1200x675/smart/cloudfront-us-east-1.images.arcpublishing.com/gray/RPWH3ST6QFH77NX7FYEOZT46LE.jpg">
+
+
+                            <a href="IceGiants.html" target="_blank"> <img class="space" src="https://cdn.vox-cdn.com/thumbor/hXUGpaFbM94ugqkI_XMiCJHjYi4=/0x0:2040x1360/1200x800/filters:focal(857x1034:1183x1360)/cdn.vox-cdn.com/uploads/chorus_image/image/55297505/jbareham_170616_1782_0001_2.0.jpg">
+                            </a>
+                        </a>
+                    </a>
+                </a>
+            </a>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+            <div class="page-header" id="campus_life">
+                <h2 class="text-capitalize">Other Important Space Bodies in Our Solar System:</h2>
+
+                <div class="row">
+                    <div class="travel_mainDiv">
+                        <img class="img-responsive" src="moon.png">
+                        <h4 class="text-capitalize"><kbd>The Moon</kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">PHOTO BY NASA</h5>
+                        <p class="text-muted text-left">The Moon is the only natural satellite that our planet has, it has a lot of craters.. It is also the only space body in our solar system the humans have set foot on - Neil Armstrong was the first man on the moon. It is one-quarter the diameter of Earth, it is the 5th largest natural satellite in the solar system. It controls tides..!</p>
+                    </div>
+                    <div class="travel_mainDiv">
+                        <img class="img-responsive" src="https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/07/SolarFull_SeanDoran_2880FullwidthLede.jpg" width: 150px;>
+                        <h4 class="text-capitalize"><kbd>The Sun!</kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">PHOTO BY NASA</h5>
+                        <p class="text-muted text-left">The Sun is the star at the center of the Solar System, it is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. Its what provides light and life to Earth.</p>
+                    </div>
+                    <div class="travel_mainDiv">
+                        <img class="img-responsive" src="https://assets.weforum.org/article/image/pmIolf_QEv2LMcD5kvQAX5Ux0T4Z3RJ15ar5zXTcN08.jpg">
+                        <h4 class="text-capitalize"><kbd>Earth!</kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">THIS PHOTO IS JUST ABOVE THE EARTH! </h5>
+                        <p class="text-muted text-left"> And of course, Earth is our beautiful blue planet. And the only known planet in the solar system with life. Because of its distance to the sun, it is in the goldilocks zone! </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+    
+    
+        <div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fvsf">
+            <h2 class="text-capitalize"> The most important space station: </h2>
+
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+         
+                <img src="iss.png" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+                <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12"> 
+The International Space Station is a modular space station in low Earth orbit. It is a multinational collaborative project involving five participating space agencies: NASA, Roscosmos, JAXA, ESA, and CSA. The ownership and use of the space station is established by intergovernmental treaties and agreements. The International Space Station also holds ASTRONAUTS and they perform space walks.
+
+ </p>
+            </li>
+    </ul>
+
+
+    </body></html>
+
+
+

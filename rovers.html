@@ -1,0 +1,438 @@
+<html>
+
+<head>
+    <title> Rovers </title>
+</head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>School Website </title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<title>Space Probes </title>
+
+
+
+
+<style>
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    img {
+        width: 250px;
+        height: 175px;
+
+    }
+
+    button {
+        width: 150;
+        height: 50;
+        background-color: firebrick;
+        color: floralwhite
+    }
+
+    .hero-container {
+        background-color: white;
+        padding: 20px;
+    }
+
+
+    .hero-image {
+        width: 42%;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .hero-content {
+        position: relative;
+        top: -22px;
+        width: 47%;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .hero-content a.button {
+        background-color: #050505;
+        padding: 10px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .navigation {
+        background-color: #050505;
+    }
+
+    .navigation ul {
+        margin-bottom: 0;
+    }
+
+    .navigation li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .navigation a {
+        color: #eef0f8;
+        font-weight: bold;
+    }
+
+    .navigation a.active {
+        text-decoration: none;
+    }
+
+    h1::before {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
+
+    h1:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    h1::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        inset: 0 0 0 0;
+        background: hsl(200 100% 80%);
+        z-index: -1;
+        transition: transform .3s ease;
+    }
+
+    h1 {
+        position: relative;
+        font-size: 5rem;
+    }
+
+    html {
+        block-size: 100%;
+        inline-size: 100%;
+    }
+
+    button {
+        text-align: center;
+    }
+
+
+
+    @media (orientation: landscape) {
+        body {
+            grid-auto-flow: column;
+        }
+    }
+
+    .rotate {
+        -webkit-transform-origin: 250px 250px;
+        -moz-transform-origin: 250px 250px;
+        -ms-transform-origin: 250px 250px;
+        -o-transform-origin: 250px 250px;
+        transform-origin: 250px 250px;
+        animation: orbit 4s linear infinite;
+    }
+
+    circle {
+        fill: none;
+    }
+
+    .sun {
+        fill: yellow;
+    }
+
+    .neptune {
+        fill: #5f9ea0;
+        -webkit-animation-duration: 7s;
+        -moz-animation-duration: 7s;
+        -o-animation-duration: 7s;
+        animation-duration: 7s;
+    }
+
+    .uranus {
+        fill: #3f56ff;
+        -webkit-animation-duration: 9s;
+        -moz-animation-duration: 9s;
+        -o-animation-duration: 9s;
+        animation-duration: 9s;
+    }
+
+    .saturn {
+        fill: #f3cfa9;
+        -webkit-animation-duration: 4s;
+        -moz-animation-duration: 4s;
+        -o-animation-duration: 4s;
+        animation-duration: 4s;
+    }
+
+    .jupiter {
+        fill: #e89054;
+        -webkit-animation-duration: 8s;
+        -moz-animation-duration: 8s;
+        -o-animation-duration: 8s;
+        animation-duration: 8s;
+    }
+
+    .mars {
+        fill: #aa180a;
+        -webkit-animation-duration: 7s;
+        -moz-animation-duration: 7s;
+        -o-animation-duration: 7s;
+        animation-duration: 7s;
+    }
+
+    .earth {
+        fill: #58aa65;
+        -webkit-animation-duration: 4s;
+        -moz-animation-duration: 4s;
+        -o-animation-duration: 4s;
+        animation-duration: 4s;
+    }
+
+    .venus {
+        fill: #e66d18;
+        -webkit-animation-duration: 6s;
+        -moz-animation-duration: 6s;
+        -o-animation-duration: 6s;
+    }
+
+    .mergury {
+        fill: #fff;
+        -webkit-animation-duration: 6s;
+        -moz-animation-duration: 6s;
+        -o-animation-duration: 6s;
+    }
+
+    @keyframes orbit {
+        from {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(360deg)
+        }
+    }
+
+    #text {
+        color: white;
+    }
+
+    #Solar {
+        background-color: black;
+    }
+
+    row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .travel_mainDiv {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+        border: 1px solid #c7c7c7;
+    }
+
+    .travel_mainDiv img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .travel_mainDiv hr {
+        width: 100%;
+    }
+
+    .travel_mainDiv h5,
+    .trave;
+
+    _mainDiv p {
+        margin-left: 20px;
+    }
+
+    #achievementsID {
+        padding-bottom: 10px;
+    }
+
+    .movie_head {
+        font-size: 20px;
+        padding: 6px 22px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .movie_head i {
+        float: right
+    }
+
+    .movie_text span {
+        color: #dd3424;
+    }
+
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="rovers.html"> Rovers </a>
+        <a href="spaceprobes.html">Exit (Space Probes)</a>
+        <a href="othermarsprobes.html"> Other Space Probes on Mars </a>
+
+
+    </div>
+
+
+
+
+
+    .
+
+
+
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+
+            <img src="https://mars.nasa.gov/layout/mars2020/images/PIA23764-RoverNamePlateonMars-web.jpg" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+            <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                Mars 2020 is a Mars rover mission forming part of NASA's Mars Exploration Program that includes the rover Perseverance and the small robotic, coaxial helicopter Ingenuity. Launching on July 30th 2020 and landing on the martian surface on the date of Febuary 18th 2021. Its launch mass is 3,649 kilograms. And it's mission type was the Exploration of Mars.. Perseverance is studying Mars' habitability, seeking signs of past microbial life, collecting and storing samples of selected rock and soil, and preparing for future human missions. It has new and professinal built-in cameras! Looking near the Jezero Crater on the Red Planet's rocky surface.
+
+            </p>
+        </li>
+    </ul>
+    <br>
+    ..
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/NASA_Mars_Rover.jpg" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+            <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                Opportunity, also known as MER-B or MER-1, and nicknamed "Oppy", is a robotic rover that was active on Mars from 2004 until the middle of 2018. Opportunity was operational on Mars for 5110 sols. It launched on July 7th 2003. Sadly, a huge dust storm wrapped around the planet on 2018 covered the rover's solar panels and left engineers struggling for monts to regain contact.. NASA declared the mission was over.
+            </p>
+        </li>
+    </ul>
+    .
+
+
+    .
+
+
+
+
+
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+
+            <img src="https://images.theconversation.com/files/5788/original/20111123000361464467-original.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+            <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011, and landed on Aeolis Palus inside Gale crater on Mars on 6 August 2012! It cost 2.5 billion dollars, and it's manufacturers are, The Jet Propulsion Labaratory (JPL), Boeing and Lockheed Martin.
+            </p>
+        </li>
+    </ul>
+
+
+    .
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Sojourner_on_Mars_PIA01122.jpg" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+            <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                Sojourner is a robotic Mars rover that landed on July 4, 1997, in the Ares Vallis region. Sojourner was operational on Mars for 92 sols. The rover was the first wheeled vehicle to rove another planet, and was part of the Mars Pathfinder mission. One of the oldest rovers of all time. This rover was apart of the Mars Pathfinder mission too, and some people called "Pathfinder" - Sojourner was the first wheeled rover on any planet. 8.5 million temperature, pressure, and wind measurements were returned from the mission. This mission marked the first time the air bag technique, used to cushion the impact during landing, had been utilized.
+
+            </p>
+        </li>
+    </ul>
+
+
+
+    .
+
+
+
+
+
+
+
+
+
+
+    <ul class="list-group">
+        <li class="list-group-item list-group-item list-group-item-success col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+
+            <img src="https://solarsystem.nasa.gov/system/content_pages/main_images/1068_rover2-1.jpg" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+            <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12">
+
+                Spirit, also known as MER-A or MER-2, is a robotic rover on Mars, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols. It was one of two rovers of NASA's Mars Exploration Rover Mission managed by the Jet Propulsion Laboratory. Spirit stopped communicating with Earth on March 22, 2010, after it got stuck in a sand trap. (Spirit's twin rover, Opportunity, operated until June 2018, until it was unable to charge its batteries due to a dust storm. NASA declared Oppy dead in February 2019.)
+            </p>
+        </li>
+    </ul>
+    .
+
+
+
+
+
+
+
+
+
+
+</body></html>

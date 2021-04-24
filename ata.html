@@ -1,0 +1,405 @@
+<html>
+
+<head>
+    <title> LAS </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200&display=swap" rel="stylesheet">
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>Space Website </title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<body>
+    <nav class="navbar-inverse" style="position:sticky;top:0;z-index:99999">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="las.html">Learn About Space</a></li>
+                <li><a href="st.html" >Stargazing Tips!</a></li>
+                <li><a href="spaceprobes.html" >Space Probes</a></li>
+                <li><a href="jobsinspace.html" >Jobs in Space!</a></li>
+                       
+             <li><a href="ata.html" >About the Author</a></li>
+             <li><a href="contact.html" >Feedback</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <style>
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 250px;
+            height: 175px;
+
+        }
+
+        button {
+            width: 150;
+            height: 50;
+            background-color: firebrick;
+            color: floralwhite
+        }
+
+        .hero-container {
+            background-color: white;
+            padding: 20px;
+        }
+
+
+        .hero-image {
+            width: 42%;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .hero-image img {
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            top: -22px;
+            width: 47%;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .hero-content a.button {
+            background-color: #050505;
+            padding: 10px;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .navigation {
+            background-color: #050505;
+        }
+
+        .navigation ul {
+            margin-bottom: 0;
+        }
+
+        .navigation li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .navigation a {
+            color: #eef0f8;
+            font-weight: bold;
+        }
+
+        .navigation a.active {
+            text-decoration: none;
+        }
+
+        h1::before {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        h1:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        h1::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            inset: 0 0 0 0;
+            background: hsl(200 100% 80%);
+            z-index: -1;
+            transition: transform .3s ease;
+        }
+
+        h1 {
+            position: relative;
+            font-size: 5rem;
+        }
+
+        html {
+            block-size: 100%;
+            inline-size: 100%;
+        }
+
+        button {
+            text-align: center;
+        }
+
+
+
+        @media (orientation: landscape) {
+            body {
+                grid-auto-flow: column;
+            }
+        }
+
+        .rotate {
+            -webkit-transform-origin: 250px 250px;
+            -moz-transform-origin: 250px 250px;
+            -ms-transform-origin: 250px 250px;
+            -o-transform-origin: 250px 250px;
+            transform-origin: 250px 250px;
+            animation: orbit 4s linear infinite;
+        }
+
+        circle {
+            fill: none;
+        }
+
+        .sun {
+            fill: yellow;
+        }
+
+        .neptune {
+            fill: #5f9ea0;
+            -webkit-animation-duration: 7s;
+            -moz-animation-duration: 7s;
+            -o-animation-duration: 7s;
+            animation-duration: 7s;
+        }
+
+        .uranus {
+            fill: #3f56ff;
+            -webkit-animation-duration: 9s;
+            -moz-animation-duration: 9s;
+            -o-animation-duration: 9s;
+            animation-duration: 9s;
+        }
+
+        .saturn {
+            fill: #f3cfa9;
+            -webkit-animation-duration: 4s;
+            -moz-animation-duration: 4s;
+            -o-animation-duration: 4s;
+            animation-duration: 4s;
+        }
+
+        .jupiter {
+            fill: #e89054;
+            -webkit-animation-duration: 8s;
+            -moz-animation-duration: 8s;
+            -o-animation-duration: 8s;
+            animation-duration: 8s;
+        }
+
+        .mars {
+            fill: #aa180a;
+            -webkit-animation-duration: 7s;
+            -moz-animation-duration: 7s;
+            -o-animation-duration: 7s;
+            animation-duration: 7s;
+        }
+
+        .earth {
+            fill: #58aa65;
+            -webkit-animation-duration: 4s;
+            -moz-animation-duration: 4s;
+            -o-animation-duration: 4s;
+            animation-duration: 4s;
+        }
+
+        .venus {
+            fill: #e66d18;
+            -webkit-animation-duration: 6s;
+            -moz-animation-duration: 6s;
+            -o-animation-duration: 6s;
+        }
+
+        .mergury {
+            fill: #fff;
+            -webkit-animation-duration: 6s;
+            -moz-animation-duration: 6s;
+            -o-animation-duration: 6s;
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        #text {
+            color: white;
+        }
+
+        #Solar {
+            background-color: black;
+        }
+
+        row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .travel_mainDiv {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            border: 1px solid #c7c7c7;
+        }
+
+        .travel_mainDiv img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .travel_mainDiv hr {
+            width: 100%;
+        }
+
+        .travel_mainDiv h5,
+        .trave;
+
+        _mainDiv p {
+            margin-left: 20px;
+        }
+
+        #achievementsID {
+            padding-bottom: 10px;
+        }
+
+        .movie_head {
+            font-size: 20px;
+            padding: 6px 22px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .movie_head i {
+            float: right
+        }
+
+        .movie_text span {
+            color: #ff7700;
+        }
+        /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+        }
+    </style>
+
+    <body>
+
+        <section id="hii" class="parallax-container">
+            <div class="parallax-inner">
+                <img src="me!me!me!.jpg" class="moon" />
+                <h1>About the Author<br><span id="text"> </span></h1>
+               
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section id="Solar">
+            <br>
+            <br>
+            <h1 id="text"> About the Author </h1>
+            <hr>
+            <p id="text">
+Bhavishyaa is a space and science enthusiast. She loves stargazing and coding, her goal is to produce space knowledge to everyone, She wanted to make a way for anyone to access space info and teach people about space. So she created this website using HTML & CSS. She loves going to sessions on space and coding and that's how she got the inspiration of making this website.
+
+
+
+<hr>
+
+            <br>
+            <br>
+            <br>
+                    <ul class="list-group">
+            <li class="list-group-item list-group-item-warning col-lg-12 col-md-12 col-sm-12 col-xs-12 fu_li">
+         
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Gfyjhye_UhAQt4W09esSk1NMqescKHWwgw&usqp=CAU" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12">
+<center>
+                <p class="list-group-text col-lg-7 col-md-7 col-sm-7 col-xs-12"> 
+"I have loved coding every since I was 7 years old. My mom and dad bought me this robot ball, and I used my IPAD to change it's colors and make it move.", <br>
+                    <br><br>
+                    
+                Her parents wanted to see if she liked coding.  "We came across this software called "Scratch", and I started researching on it". Soon she became a certified scratch coder, then this pandemic came over. "I wanted to find a way to make a contribution to the community." 
+                    
+                    <br>
+                    
+                    <br>
+                    
+                    Bhavi decided to make a coding camp online to teach kids about coding, "We held a zoom session and everyday we had a 1-hour session to learn about scratch"
+                    
+                    <br>
+                    
+                    <br>
+                    
+                    Later she started doing sessions for other oragizations too. Like CAGIS (Canadian Association for Girls in Science) and Unstructured Studio. 
+
+ </p></center>
+            </li>
+    </ul>
+
+
+
+
+
+  
+
+        </section>
+    </body></body> </html>
+
+
+

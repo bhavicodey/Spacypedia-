@@ -1,0 +1,371 @@
+<html>
+
+<head>
+    <title> Rovers </title> 
+</head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>School Website </title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<title> Other Space Probes </title>
+
+
+
+
+<style>
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    img {
+        width: 250px;
+        height: 175px;
+
+    }
+
+    button {
+        width: 150;
+        height: 50;
+        background-color: firebrick;
+        color: floralwhite
+    }
+
+    .hero-container {
+        background-color: white;
+        padding: 20px;
+    }
+
+
+    .hero-image {
+        width: 42%;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .hero-content {
+        position: relative;
+        top: -22px;
+        width: 47%;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .hero-content a.button {
+        background-color: #050505;
+        padding: 10px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .navigation {
+        background-color: #050505;
+    }
+
+    .navigation ul {
+        margin-bottom: 0;
+    }
+
+    .navigation li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .navigation a {
+        color: #eef0f8;
+        font-weight: bold;
+    }
+
+    .navigation a.active {
+        text-decoration: none;
+    }
+
+    h1::before {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
+
+    h1:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    h1::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        inset: 0 0 0 0;
+        background: hsl(200 100% 80%);
+        z-index: -1;
+        transition: transform .3s ease;
+    }
+
+    h1 {
+        position: relative;
+        font-size: 5rem;
+    }
+
+    html {
+        block-size: 100%;
+        inline-size: 100%;
+    }
+
+    button {
+        text-align: center;
+    }
+
+
+
+    @media (orientation: landscape) {
+        body {
+            grid-auto-flow: column;
+        }
+    }
+
+    .rotate {
+        -webkit-transform-origin: 250px 250px;
+        -moz-transform-origin: 250px 250px;
+        -ms-transform-origin: 250px 250px;
+        -o-transform-origin: 250px 250px;
+        transform-origin: 250px 250px;
+        animation: orbit 4s linear infinite;
+    }
+
+    circle {
+        fill: none;
+    }
+
+    .sun {
+        fill: yellow;
+    }
+
+    .neptune {
+        fill: #5f9ea0;
+        -webkit-animation-duration: 7s;
+        -moz-animation-duration: 7s;
+        -o-animation-duration: 7s;
+        animation-duration: 7s;
+    }
+
+    .uranus {
+        fill: #3f56ff;
+        -webkit-animation-duration: 9s;
+        -moz-animation-duration: 9s;
+        -o-animation-duration: 9s;
+        animation-duration: 9s;
+    }
+
+    .saturn {
+        fill: #f3cfa9;
+        -webkit-animation-duration: 4s;
+        -moz-animation-duration: 4s;
+        -o-animation-duration: 4s;
+        animation-duration: 4s;
+    }
+
+    .jupiter {
+        fill: #e89054;
+        -webkit-animation-duration: 8s;
+        -moz-animation-duration: 8s;
+        -o-animation-duration: 8s;
+        animation-duration: 8s;
+    }
+
+    .mars {
+        fill: #aa180a;
+        -webkit-animation-duration: 7s;
+        -moz-animation-duration: 7s;
+        -o-animation-duration: 7s;
+        animation-duration: 7s;
+    }
+
+    .earth {
+        fill: #58aa65;
+        -webkit-animation-duration: 4s;
+        -moz-animation-duration: 4s;
+        -o-animation-duration: 4s;
+        animation-duration: 4s;
+    }
+
+    .venus {
+        fill: #e66d18;
+        -webkit-animation-duration: 6s;
+        -moz-animation-duration: 6s;
+        -o-animation-duration: 6s;
+    }
+
+    .mergury {
+        fill: #fff;
+        -webkit-animation-duration: 6s;
+        -moz-animation-duration: 6s;
+        -o-animation-duration: 6s;
+    }
+
+    @keyframes orbit {
+        from {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(360deg)
+        }
+    }
+
+    #text {
+        color: white;
+    }
+
+    #Solar {
+        background-color: black;
+    }
+
+    row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .travel_mainDiv {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+        border: 1px solid #c7c7c7;
+    }
+
+    .travel_mainDiv img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .travel_mainDiv hr {
+        width: 100%;
+    }
+
+    .travel_mainDiv h5,
+    .trave;
+
+    _mainDiv p {
+        margin-left: 20px;
+    }
+
+    #achievementsID {
+        padding-bottom: 10px;
+    }
+
+    .movie_head {
+        font-size: 20px;
+        padding: 6px 22px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .movie_head i {
+        float: right
+    }
+
+    .movie_text span {
+        color: #dd3424;
+    }
+
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="topnav">
+        <a href="rovers.html"> Rovers </a>
+        <a href="spaceprobes.html">Exit (Space Probes)</a>
+        <a href="othermarsprobes.html" class="active"> Other Space Probes on Mars </a>
+
+
+    </div>
+
+
+
+
+
+    
+
+
+     <div class="travel_mainDiv">
+                        <img class="img-responsive" src="https://cdn.history101.com/wp-content/uploads/2019/05/26248-1556055726050-2.jpg" width: 150px;>
+                        <h4 class="text-capitalize"><kbd> mariner 9</kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">The First Probe</h5>
+                        <p class="text-muted text-left">Mariner 9 was a robotic space probe that contributed greatly to the exploration of Mars and was part of the NASA Mariner program. This probe became the first space probe to orbit another planet AKA Mars. It's launch date was on May 30th 1971, making it the oldest space contribution to the Red Planet. Mariner 9 remains a derelict satellite in Mars orbit. It is expected to remain in orbit until at least 2022, after which the spacecraft is projected to enter the Martian atmosphere and either burn up or crash into the planet's surface.  </p>
+                    </div>
+
+
+     <div class="travel_mainDiv">
+                        <img class="img-responsive" src="https://www.aljazeera.com/wp-content/uploads/2021/04/2021-04-08-Mars-Ingenuity-ART-PIA23720.png?resize=770%2C513" width: 150px;>
+                        <h4 class="text-capitalize"><kbd> ingenuity</kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">The First Helicopter on the red planet.. :)</h5>
+                        <p class="text-muted text-left">Ingenuity is a small robotic helicopter located on Mars since 18 February 2021. It successfully completed the first powered controlled flight using atmospheric lift on any planet besides Earth on 19 April 2021, taking off vertically, hovering and landing. It flew on Mars and was carried by NASA's rover called Perseverance that was launched in July last year and will help collect samples from the surface from locations where the rover cannot reach. The helicopter got its name because of a high school student Vaneeza Rupani of Alabama.</p>
+                    </div>
+    
+     
+
+
+     <div class="travel_mainDiv">
+                        <img class="img-responsive" src="https://cdn.britannica.com/19/117219-050-FCE5932F/conception-Artist-soil-samples-space-probe-Phoenix.jpg" width: 150px;>
+                        <h4 class="text-capitalize"><kbd> Pheonix </kbd></h4>
+                        <hr>
+                        <h5 class="text-success text-left text-capitalize">Space Probe</h5>
+                        <p class="text-muted text-left"> Phoenix is an unmanned space probe that landed on the surface of Mars on May 25, 2008 and operated until November 2, 2008. Phoenix was operational on Mars for 157 sols. Its instruments were used to assess the local habitability and to research the history of water on Mars.  The lander dug, scooped, baked, sniffed and tasted the Red Planet's soil. Among early results, it verified the presence of water-ice in the Martian subsurface, which NASA's Mars Odyssey orbiter first detected remotely in 2002. ... Phoenix's findings also added to the history of water on Mars.</p>
+                    </div>
+    
+
+
+</body></html>
